@@ -1,0 +1,100 @@
+/* --- Core Styling --- */
+body {
+    font-family: 'Inter', sans-serif; /* A clean, modern look */
+    background-color: #f7f9fc;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+nav {
+    text-align: right;
+    padding: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* --- The Scroll Animation --- */
+/* This defines WHAT the animation does: fade and rise */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Starts 30px lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends in its real spot */
+    }
+}
+
+/* We apply this animation to main content blocks */
+.hero, .project-block {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* --- Layouts (Flexbox) --- */
+
+/* Home Page Specific */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10% 10%;
+    min-height: 80vh;
+}
+
+.hero-text {
+    flex: 1; /* Takes up left half */
+    padding-right: 50px;
+}
+
+.hero-image {
+    flex: 1; /* Takes up right half */
+}
+
+/* Global Image Styling */
+.hero-image img, .project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Nice modern shadow */
+}
+
+/* Text Styling */
+h1 {
+    font-size: 3rem;
+    color: #1a2a3a;
+    margin-bottom: 10px;
+}
+
+.sub-header {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: normal;
+}
+
+/* --- Projects Page Specific --- */
+.projects-container {
+    padding: 5% 10%;
+}
+
+.project-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px; /* Space between projects */
+}
+
+/* Force Text Left, Image Right for every project block */
+.project-text {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.project-image {
+    flex: 1;
+}
